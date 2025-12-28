@@ -1,0 +1,58 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# popdemo
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of popdemo is to provide a minimal example for learning R package development.
+
+## Installation
+
+You can install the development version of popdemo from [GitHub](https://github.com/) with:
+
+```{r eval=FALSE}
+remotes::install_github("zhjx19/popdemo")
+```
+
+## Example
+
+```{r message=FALSE}
+library(dplyr)
+library(popdemo)
+```
+
+Population Structure Data from China's 7th Census:
+
+```{r}
+pop7str
+```
+
+Draw a Population Pyramid:
+
+```{r}
+plot_pyramid(pop7str)      # default colors
+plot_pyramid(pop7str, colors = c("blue", "red"))
+```
+
+Calculate Dependency Ratio:
+
+```{r}
+pop7str |> 
+  mutate(pop = Male + Female) |> 
+  dependency_ratio(Age, pop)
+```
+
