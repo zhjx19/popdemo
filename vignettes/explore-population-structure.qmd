@@ -1,0 +1,16 @@
+---
+title: "explore-population-structure"
+vignette: >
+  %\VignetteIndexEntry{explore-population-structure}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+```{r}
+#| label: setup
+library(popdemo)
+```
